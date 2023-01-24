@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.camera.core.CameraSelector
+import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageCapture
 import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.Preview
@@ -65,7 +66,7 @@ class FirstFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
@@ -152,6 +153,17 @@ class FirstFragment : Fragment() {
 
             imageCapture = ImageCapture.Builder().build()
 
+            val imageAnalyzer = ImageAnalysis.Builder()
+                .build()
+                .also {
+                    it.setAnalyzer(
+                        cameraExecutor,
+                        LuminosityAnalyzer { luma ->
+                            Log.d(TAG, "Average luminosity: $luma")
+                        }
+                    )
+                }
+
             // Select back camera as a default
             val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 
@@ -164,7 +176,8 @@ class FirstFragment : Fragment() {
                     this,
                     cameraSelector,
                     preview,
-                    imageCapture
+                    imageCapture,
+                    imageAnalyzer,
                 )
             } catch (exc: Exception) {
                 Log.e(TAG, "Use case binding failed", exc)
