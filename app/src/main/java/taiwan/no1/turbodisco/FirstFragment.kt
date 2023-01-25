@@ -10,11 +10,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.camera.core.CameraSelector
+import androidx.camera.core.ExperimentalGetImage
 import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageCapture
 import androidx.camera.core.ImageCaptureException
+import androidx.camera.core.ImageProxy
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.video.Recorder
@@ -34,6 +35,7 @@ typealias LumaListener = (luma: Double) -> Unit
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
+@ExperimentalGetImage
 class FirstFragment : Fragment() {
     companion object {
         private const val TAG = "CameraXApp"
@@ -119,18 +121,32 @@ class FirstFragment : Fragment() {
 
         // Set up image capture listener, which is triggered after photo has
         // been taken
+        // imageCapture.takePicture(
+        //     outputOptions,
+        //     ContextCompat.getMainExecutor(requireActivity()),
+        //     object : ImageCapture.OnImageSavedCallback {
+        //         override fun onError(exc: ImageCaptureException) {
+        //             Log.e(TAG, "Photo capture failed: ${exc.message}", exc)
+        //         }
+        //
+        //         override fun onImageSaved(output: ImageCapture.OutputFileResults) {
+        //             val msg = "Photo capture succeeded: ${output.savedUri}"
+        //             Toast.makeText(requireActivity(), msg, Toast.LENGTH_SHORT).show()
+        //             Log.v(TAG, msg)
+        //         }
+        //     }
+        // )
         imageCapture.takePicture(
-            outputOptions,
             ContextCompat.getMainExecutor(requireActivity()),
-            object : ImageCapture.OnImageSavedCallback {
+            object : ImageCapture.OnImageCapturedCallback() {
                 override fun onError(exc: ImageCaptureException) {
                     Log.e(TAG, "Photo capture failed: ${exc.message}", exc)
                 }
 
-                override fun onImageSaved(output: ImageCapture.OutputFileResults) {
-                    val msg = "Photo capture succeeded: ${output.savedUri}"
-                    Toast.makeText(requireActivity(), msg, Toast.LENGTH_SHORT).show()
-                    Log.v(TAG, msg)
+                override fun onCaptureSuccess(image: ImageProxy) {
+                    image.image?.toBitmap()?.let {
+                        binding.ivCaptured.setImageBitmap(it)
+                    }
                 }
             }
         )
@@ -154,13 +170,18 @@ class FirstFragment : Fragment() {
             imageCapture = ImageCapture.Builder().build()
 
             val imageAnalyzer = ImageAnalysis.Builder()
+                .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
                 .build()
                 .also {
                     it.setAnalyzer(
                         cameraExecutor,
-                        LuminosityAnalyzer { luma ->
-                            Log.d(TAG, "Average luminosity: $luma")
-                        }
+                        // NOTE(jieyi): 2023/01/26 Here will be real-time analyzing
+                        // LuminosityAnalyzer { luma ->
+                        //     Log.d(TAG, "Average luminosity: $luma")
+                        // }
+                        // AnalyzeImageAnalyzer {
+                        //     println(it)
+                        // }
                     )
                 }
 
