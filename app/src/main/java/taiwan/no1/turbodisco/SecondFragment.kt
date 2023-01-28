@@ -22,24 +22,24 @@ class SecondFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding =
             FragmentSecondBinding.inflate(
                 inflater,
                 container,
-                false
+                false,
             )
         return binding.root
     }
 
     override fun onViewCreated(
         view: View,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ) {
         super.onViewCreated(
             view,
-            savedInstanceState
+            savedInstanceState,
         )
 
         binding.buttonSecond.setOnClickListener {
