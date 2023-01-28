@@ -24,11 +24,11 @@ import androidx.camera.video.VideoCapture
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import taiwan.no1.turbodisco.databinding.FragmentFirstBinding
 import java.text.SimpleDateFormat
 import java.util.Locale
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+import taiwan.no1.turbodisco.databinding.FragmentFirstBinding
 
 typealias LumaListener = (luma: Double) -> Unit
 
@@ -68,7 +68,7 @@ class FirstFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        savedInstanceState: Bundle?
     ): View {
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
@@ -176,12 +176,12 @@ class FirstFragment : Fragment() {
                     it.setAnalyzer(
                         cameraExecutor,
                         // NOTE(jieyi): 2023/01/26 Here will be real-time analyzing
-                        // LuminosityAnalyzer { luma ->
-                        //     Log.d(TAG, "Average luminosity: $luma")
-                        // }
-                        // AnalyzeImageAnalyzer {
-                        //     println(it)
-                        // }
+                        LuminosityAnalyzer { luma ->
+                            Log.d(TAG, "Average luminosity: $luma")
+                        }
+//                        AnalyzeImageAnalyzer {
+//                            println(it)
+//                        }
                     )
                 }
 
@@ -198,7 +198,7 @@ class FirstFragment : Fragment() {
                     cameraSelector,
                     preview,
                     imageCapture,
-                    imageAnalyzer,
+                    imageAnalyzer
                 )
             } catch (exc: Exception) {
                 Log.e(TAG, "Use case binding failed", exc)
