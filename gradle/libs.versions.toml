@@ -6,13 +6,15 @@ com-android-application = { id = "com.android.application", version = "8.1.0-alp
 
 com-android-library = { id = "com.android.library", version = "8.1.0-alpha02" }
 
-org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version = "1.8.0" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
-com-google-gms-google-services = { id = "com.google.gms.google-services", version = "4.3.14" }
+google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
 
 [versions]
 
 kotlin = "1.8.0"
+
+google-services = "4.3.15"
 
 androidx-test-ext-junit = "1.1.5"
 
@@ -21,20 +23,34 @@ androidx-test-espresso = "3.5.1"
 androidx-databinding = "8.1.0-alpha02"
 
 androidx-core = "1.9.0"
+##         ⬆ = "1.10.0-alpha01"
+##         ⬆ = "1.10.0-alpha02"
 
 androidx-appcompat = "1.6.0"
+##              ⬆ = "1.7.0-alpha01"
 
 google-android-material = "1.8.0"
+##                   ⬆ = "1.9.0-alpha01"
 
 androidx-constraintlayout = "2.1.4"
+##                     ⬆ = "2.2.0-alpha01"
+##                     ⬆ = "2.2.0-alpha02"
+##                     ⬆ = "2.2.0-alpha03"
+##                     ⬆ = "2.2.0-alpha04"
+##                     ⬆ = "2.2.0-alpha05"
+##                     ⬆ = "2.2.0-alpha06"
 
 androidx-navigation = "2.5.3"
+##               ⬆ = "2.6.0-alpha01"
+##               ⬆ = "2.6.0-alpha02"
+##               ⬆ = "2.6.0-alpha03"
+##               ⬆ = "2.6.0-alpha04"
 
 junit-junit = "4.13.2"
 
 [libraries]
 
-google-services = "com.google.gms:google-services:4.3.15"
+google-services = { group = "com.google.gms", name = "google-services", version.ref = "google-services" }
 
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 

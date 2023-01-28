@@ -8,4 +8,8 @@ plugins {
     id 'com.android.library' version '8.1.0-alpha02' apply false
     id 'org.jetbrains.kotlin.android' apply false
     id 'com.google.gms.google-services' apply false
+//    alias(libs.plugins.com.android.application)
+//    alias(libs.plugins.com.android.library)
+//    alias(libs.plugins.kotlin.android)
+//    alias(libs.plugins.google.services)
 }
