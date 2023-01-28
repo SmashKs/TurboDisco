@@ -35,6 +35,10 @@
     <tabFormat>
       <option name="ENABLED" value="true" />
     </tabFormat>
+    <codeStyleSettings language="EditorConfig">
+      <option name="SPACE_AROUND_ASSIGNMENT_OPERATORS" value="false" />
+      <option name="SPACE_AFTER_COMMA" value="false" />
+    </codeStyleSettings>
     <codeStyleSettings language="HTML">
       <option name="RIGHT_MARGIN" value="300" />
     </codeStyleSettings>
