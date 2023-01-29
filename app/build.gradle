@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.com.android.application)
     alias(libs.plugins.kotlin.android)
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -37,7 +38,6 @@ android {
     }
 
     buildFeatures {
-        viewBinding true
         compose true
     }
 
@@ -47,20 +47,21 @@ android {
 }
 
 dependencies {
+    implementation libs.core.ktx
     //region Jetpack Compose
     implementation platform(libs.compose.bom)
+    implementation libs.activity.compose
     implementation libs.material3
     implementation libs.ui.tooling.preview
-    implementation libs.activity.compose
     implementation libs.lifecycle.viewmodel.compose
-    //endregion
 
-    implementation libs.core.ktx
-    implementation libs.appcompat
-    implementation libs.material
-    implementation libs.constraintlayout
-    implementation libs.navigation.fragment.ktx
-    implementation libs.navigation.ui.ktx
+    // Optional - Integration with activities
+    implementation 'androidx.activity:activity-compose:1.6.1'
+    // Optional - Integration with ViewModels
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1'
+    // Optional - Integration with LiveData
+    implementation 'androidx.compose.runtime:runtime-livedata'
+    //endregion
 
     debugImplementation libs.ui.tooling.preview
 
