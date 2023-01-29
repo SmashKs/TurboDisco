@@ -8,17 +8,17 @@ com-android-library = { id = "com.android.library", version = "8.1.0-alpha02" }
 
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
-google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
-
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version = "1.8.0" }
 
 com-google-gms-google-services = { id = "com.google.gms.google-services", version = "4.3.15" }
 
+com-google-devtools-ksp = { id = "com.google.devtools.ksp", version = "1.8.0-1.0.9" }
+
+org-jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version = "1.8.0" }
+
 [versions]
 
 kotlin = "1.8.0"
-
-google-services = "4.3.15"
 
 androidx-test-ext-junit = "1.1.5"
 
@@ -32,32 +32,86 @@ androidx-compose = "2023.01.00"
 
 androidx-compose-compiler = "1.4.0"
 
+androidx-lifecycle-viewmodel-compose = "2.6.0-alpha05"
+
+androidx-room = "2.5.0"
+
+coil-kt = "2.2.2"
+
+kotlinx-serialization = "1.5.0-RC"
+
+kotlinx-datetime = "0.4.0"
+
+kotlinx-coroutines = "1.6.4"
+
+androidx-startup = "1.2.0-alpha02"
+
+androidx-work = "2.8.0-rc01"
+
+androidx-datastore = "1.1.0-alpha01"
+
+retrofit2 = "2.9.0"
+
+jakewharton-retrofit2-kotlinx-serialization-converter = "0.8.0"
+
 [libraries]
 
-google-services = "com.google.gms:google-services:4.3.15"
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core" }
+
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidx-compose" }
+
+androidx-compose-compiler-compiler = { group = "androidx.compose.compiler", name = "compiler", version.ref = "androidx-compose-compiler" }
+
+activity-compose = { module = "androidx.activity:activity-compose" }
+
+material3 = { module = "androidx.compose.material3:material3" }
+
+lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle-viewmodel-compose" }
+
+runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata" }
+
+ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+
+debug-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+
+kotlin-parcelize-runtime = { group = "org.jetbrains.kotlin", name = "kotlin-parcelize-runtime", version.ref = "kotlin" }
+
+kotlin-parcelize-compiler = { group = "org.jetbrains.kotlin", name = "kotlin-parcelize-compiler", version.ref = "kotlin" }
 
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidx-test-espresso" }
 
-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core" }
-
 junit-junit = { group = "junit", name = "junit", version.ref = "junit-junit" }
+
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "androidx-room" }
 
 ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 
-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidx-compose" }
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil-kt" }
 
-material3 = { module = "androidx.compose.material3:material3" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
 
-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinx-datetime" }
 
-activity-compose = { group = "androidx.activity", name = "activity-compose" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
 
-lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose" }
+startup-runtime = { group = "androidx.startup", name = "startup-runtime", version.ref = "androidx-startup" }
 
-androidx-compose-compiler-compiler = { group = "androidx.compose.compiler", name = "compiler", version.ref = "androidx-compose-compiler" }
+work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "androidx-work" }
 
-kotlin-parcelize-runtime = { group = "org.jetbrains.kotlin", name = "kotlin-parcelize-runtime", version.ref = "kotlin" }
+datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "androidx-datastore" }
 
-kotlin-parcelize-compiler = { group = "org.jetbrains.kotlin", name = "kotlin-parcelize-compiler", version.ref = "kotlin" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidx-room" }
+
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit2" }
+
+retrofit2-kotlinx-serialization-converter = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "jakewharton-retrofit2-kotlinx-serialization-converter" }
+
+symbol-processing = "com.google.devtools.ksp:symbol-processing:1.8.0-1.0.9"
+
+kotlin-serialization = { group = "org.jetbrains.kotlin", name = "kotlin-serialization", version.ref = "kotlin" }
+
+symbol-processing-api = "com.google.devtools.ksp:symbol-processing-api:1.8.0-1.0.9"
+
+symbol-processing-cmdline = "com.google.devtools.ksp:symbol-processing-cmdline:1.8.0-1.0.9"

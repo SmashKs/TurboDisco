@@ -1,7 +1,9 @@
 plugins {
     alias(libs.plugins.com.android.application)
     alias(libs.plugins.kotlin.android)
+    id 'com.google.devtools.ksp'
     id 'kotlin-parcelize'
+    id 'org.jetbrains.kotlin.plugin.serialization'
 }
 
 android {
@@ -23,6 +25,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    packagingOptions {
+        resources.excludes += "DebugProbesKt.bin"
     }
 
     compileOptions {
@@ -54,16 +60,25 @@ dependencies {
     implementation libs.material3
     implementation libs.ui.tooling.preview
     implementation libs.lifecycle.viewmodel.compose
+    implementation libs.runtime.livedata
+    implementation libs.coil.compose
 
-    // Optional - Integration with activities
-    implementation 'androidx.activity:activity-compose:1.6.1'
-    // Optional - Integration with ViewModels
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1'
-    // Optional - Integration with LiveData
-    implementation 'androidx.compose.runtime:runtime-livedata'
+    debugImplementation libs.debug.ui.tooling
     //endregion
 
-    debugImplementation libs.ui.tooling.preview
+    implementation libs.kotlinx.serialization.json
+    implementation libs.kotlinx.datetime
+    implementation libs.kotlinx.coroutines.android
+
+    implementation libs.startup.runtime
+    implementation libs.work.runtime.ktx
+
+    implementation libs.datastore.preferences
+    implementation libs.room.runtime
+    ksp libs.room.compiler
+
+    implementation libs.retrofit
+    implementation libs.retrofit2.kotlinx.serialization.converter
 
     testImplementation libs.junit.junit
 
