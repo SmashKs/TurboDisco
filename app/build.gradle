@@ -31,6 +31,9 @@ android {
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17
+        suppressWarnings = false
+        languageVersion = '1.9'
+        freeCompilerArgs = ['-Xcontext-receivers']
     }
 
     buildFeatures {
@@ -39,7 +42,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.3.2"
+        kotlinCompilerExtensionVersion = "1.4.0"
     }
 }
 
@@ -59,7 +62,7 @@ dependencies {
     implementation libs.navigation.fragment.ktx
     implementation libs.navigation.ui.ktx
 
-    debugImplementation libs.ui.tooling
+    debugImplementation libs.ui.tooling.preview
 
     testImplementation libs.junit.junit
 
