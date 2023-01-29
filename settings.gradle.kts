@@ -5,12 +5,12 @@ pluginManagement {
         gradlePluginPortal()
     }
     plugins {
-        id 'de.fayard.refreshVersions' version '0.51.0'
+        id("de.fayard.refreshVersions").version("0.51.0")
     }
 }
 
 plugins {
-    id 'de.fayard.refreshVersions'
+    id("de.fayard.refreshVersions")
 }
 
 dependencyResolutionManagement {
@@ -22,4 +22,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "TurboDisco"
-include ':app'
+include(":app")
