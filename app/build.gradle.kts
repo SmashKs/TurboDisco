@@ -23,6 +23,7 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
+            isDebuggable = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), file("proguard-rules.pro"))
         }
     }
@@ -62,6 +63,8 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.compose)
     implementation(libs.runtime.livedata)
     implementation(libs.coil.compose)
+
+    implementation(libs.accompanist.permissions)
 
     debugImplementation(libs.debug.ui.tooling)
     //endregion

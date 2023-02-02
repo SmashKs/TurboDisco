@@ -54,6 +54,8 @@ retrofit2 = "2.9.0"
 
 jakewharton-retrofit2-kotlinx-serialization-converter = "0.8.0"
 
+google-accompanist = "0.29.1-alpha"
+
 [libraries]
 
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core" }
@@ -115,3 +117,5 @@ kotlin-serialization = { group = "org.jetbrains.kotlin", name = "kotlin-serializ
 symbol-processing-api = "com.google.devtools.ksp:symbol-processing-api:1.8.0-1.0.9"
 
 symbol-processing-cmdline = "com.google.devtools.ksp:symbol-processing-cmdline:1.8.0-1.0.9"
+
+accompanist-permissions = { group = "com.google.accompanist", name = "accompanist-permissions", version.ref = "google-accompanist" }
