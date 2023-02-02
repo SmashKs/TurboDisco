@@ -80,8 +80,21 @@ dependencies {
     implementation(libs.room.runtime)
     ksp(libs.room.compiler)
 
-    implementation(libs.retrofit)
-    implementation(libs.retrofit2.kotlinx.serialization.converter)
+    //region Ktor
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.okhttp)
+    implementation(libs.ktor.serialization.kotlinx.json)
+    implementation(libs.ktor.client.logging)
+    //endregion
+
+    //region di koin
+    implementation(libs.koin.androidx.workmanager)
+    implementation(libs.koin.androidx.compose)
+    implementation(libs.koin.ktor)
+    implementation(libs.koin.logger.slf4j)
+    implementation(libs.koin.annotations)
+    ksp(libs.koin.ksp.compiler)
+    //endregion
 
     testImplementation(libs.junit.junit)
 

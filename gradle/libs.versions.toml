@@ -50,11 +50,17 @@ androidx-work = "2.8.0-rc01"
 
 androidx-datastore = "1.1.0-alpha01"
 
-retrofit2 = "2.9.0"
-
-jakewharton-retrofit2-kotlinx-serialization-converter = "0.8.0"
-
 google-accompanist = "0.29.1-alpha"
+
+koin = "3.3.2"
+
+koin-ktor = "3.3.0"
+
+koin-compose = "3.4.1"
+
+koin-annotation = "1.1.0"
+
+ktor = "2.2.3"
 
 [libraries]
 
@@ -106,16 +112,24 @@ datastore-preferences = { group = "androidx.datastore", name = "datastore-prefer
 
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidx-room" }
 
-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit2" }
-
-retrofit2-kotlinx-serialization-converter = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "jakewharton-retrofit2-kotlinx-serialization-converter" }
-
-symbol-processing = "com.google.devtools.ksp:symbol-processing:1.8.0-1.0.9"
-
-kotlin-serialization = { group = "org.jetbrains.kotlin", name = "kotlin-serialization", version.ref = "kotlin" }
-
-symbol-processing-api = "com.google.devtools.ksp:symbol-processing-api:1.8.0-1.0.9"
-
-symbol-processing-cmdline = "com.google.devtools.ksp:symbol-processing-cmdline:1.8.0-1.0.9"
-
 accompanist-permissions = { group = "com.google.accompanist", name = "accompanist-permissions", version.ref = "google-accompanist" }
+
+ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+
+ktor-client-okhttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor" }
+
+ktor-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
+
+ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
+
+koin-androidx-workmanager = { group = "io.insert-koin", name = "koin-androidx-workmanager", version.ref = "koin" }
+
+koin-androidx-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin-compose" }
+
+koin-ktor = { group = "io.insert-koin", name = "koin-ktor", version.ref = "koin-ktor" }
+
+koin-logger-slf4j = { group = "io.insert-koin", name = "koin-logger-slf4j", version.ref = "koin-ktor" }
+
+koin-annotations = { group = "io.insert-koin", name = "koin-annotations", version.ref = "koin-annotation" }
+
+koin-ksp-compiler = { group = "io.insert-koin", name = "koin-ksp-compiler", version.ref = "koin-annotation" }
