@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "taiwan.no1.turbodisco"
+    namespace = "taiwan.no.one.turbodisco"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "taiwan.no1.turbodisco"
+        applicationId = "taiwan.no.one.turbodisco"
         minSdk = 28
         targetSdk = 33
         versionCode = 1

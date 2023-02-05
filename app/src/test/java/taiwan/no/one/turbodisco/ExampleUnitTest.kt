@@ -1,4 +1,4 @@
-package taiwan.no1.turbodisco
+package taiwan.no.one.turbodisco
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
@@ -13,7 +13,7 @@ class ExampleUnitTest {
     fun addition_isCorrect() {
         assertEquals(
             4,
-            2 + 2
+            2 + 2,
         )
     }
 }

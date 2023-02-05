@@ -1,4 +1,4 @@
-package taiwan.no1.turbodisco
+package taiwan.no.one.turbodisco
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

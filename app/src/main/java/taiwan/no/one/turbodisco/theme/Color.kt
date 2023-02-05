@@ -1,4 +1,4 @@
-package taiwan.no1.turbodisco.theme
+package taiwan.no.one.turbodisco.theme
 
 import androidx.compose.ui.graphics.Color
 
