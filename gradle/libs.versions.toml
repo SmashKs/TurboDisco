@@ -11,14 +11,17 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 com-google-gms-google-services = { id = "com.google.gms.google-services", version = "4.3.15" }
 
 com-google-devtools-ksp = { id = "com.google.devtools.ksp", version = "1.8.0-1.0.9" }
+##                                                               ⬆ = "1.8.10-1.0.9" }
 
-org-jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version = "1.8.0" }
+org-jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 
-org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version = "1.8.0" }
+org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
 [versions]
 
 kotlin = "1.8.0"
+##  ⬆ = "1.8.10"
+##  ⬆ = "1.8.20-Beta"
 
 androidx-test-ext-junit = "1.1.5"
 
@@ -51,6 +54,7 @@ androidx-datastore = "1.1.0-alpha01"
 google-accompanist = "0.29.1-alpha"
 
 koin = "3.3.2"
+##⬆ = "3.3.3"
 
 koin-ktor = "3.3.0"
 
