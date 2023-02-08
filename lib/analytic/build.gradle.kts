@@ -1,6 +1,6 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.com.android.library)
+    alias(libs.plugins.org.jetbrains.kotlin.android)
 }
 
 android {
@@ -31,16 +31,14 @@ android {
 }
 
 dependencies {
-    api(platform("com.google.firebase:firebase-bom:31.1.1"))
-    api("com.google.firebase:firebase-analytics-ktx")
-    api("io.sentry:sentry-android:6.10.0")
+    api(platform(libs.firebase.bom))
+    api(libs.firebase.analytics.ktx)
+    api(libs.sentry.android)
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.4.1")
-    implementation("com.google.android.material:material:1.5.0")
+    implementation(libs.core.ktx)
 
-    testImplementation("junit:junit:4.13.2")
+    testImplementation(libs.junit.junit)
 
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.espresso.core)
 }

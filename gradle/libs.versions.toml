@@ -4,31 +4,31 @@
 
 com-android-application = { id = "com.android.application", version = "8.1.0-alpha03" }
 
+com-android-library = { id = "com.android.library", version = "8.1.0-alpha03" }
+
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
 com-google-gms-google-services = { id = "com.google.gms.google-services", version = "4.3.15" }
 
 com-google-devtools-ksp = { id = "com.google.devtools.ksp", version = "1.8.0-1.0.9" }
-##                                                               ⬆ = "1.8.10-1.0.9" }
 
 org-jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version = "1.8.0" }
+
+org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version = "1.8.0" }
 
 [versions]
 
 kotlin = "1.8.0"
-##  ⬆ = "1.8.10"
 
 androidx-test-ext-junit = "1.1.5"
 
 androidx-test-espresso = "3.5.1"
 
-androidx-core = "1.10.0-alpha02"
+androidx-core = "1.9.0"
 
 junit-junit = "4.13.2"
 
 androidx-compose = "2023.01.00"
-
-androidx-compose-compiler = "1.4.0"
 
 androidx-lifecycle-viewmodel-compose = "2.6.0-alpha05"
 
@@ -60,13 +60,15 @@ koin-annotation = "1.1.0"
 
 ktor = "2.2.3"
 
+firebase-bom = "31.1.1"
+
+sentry = "6.10.0"
+
 [libraries]
 
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core" }
 
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidx-compose" }
-
-androidx-compose-compiler-compiler = { group = "androidx.compose.compiler", name = "compiler", version.ref = "androidx-compose-compiler" }
 
 activity-compose = { module = "androidx.activity:activity-compose" }
 
@@ -80,10 +82,6 @@ ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 
 debug-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 
-kotlin-parcelize-runtime = { group = "org.jetbrains.kotlin", name = "kotlin-parcelize-runtime", version.ref = "kotlin" }
-
-kotlin-parcelize-compiler = { group = "org.jetbrains.kotlin", name = "kotlin-parcelize-compiler", version.ref = "kotlin" }
-
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidx-test-espresso" }
@@ -91,8 +89,6 @@ espresso-core = { group = "androidx.test.espresso", name = "espresso-core", vers
 junit-junit = { group = "junit", name = "junit", version.ref = "junit-junit" }
 
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "androidx-room" }
-
-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 
 coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil-kt" }
 
@@ -131,3 +127,9 @@ koin-logger-slf4j = { group = "io.insert-koin", name = "koin-logger-slf4j", vers
 koin-annotations = { group = "io.insert-koin", name = "koin-annotations", version.ref = "koin-annotation" }
 
 koin-ksp-compiler = { group = "io.insert-koin", name = "koin-ksp-compiler", version.ref = "koin-annotation" }
+
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
+
+firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
+
+sentry-android = { group = "io.sentry", name = "sentry-android", version.ref = "sentry" }
