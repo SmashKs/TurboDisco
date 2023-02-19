@@ -1,3 +1,7 @@
+plugins.apply("plugin.header")
+plugins.apply("plugin.common")
+// plugins.apply("plugin.kotlin")
+
 buildscript {
     dependencies {
 //        classpath libs.google.services
