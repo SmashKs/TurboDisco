@@ -2,9 +2,9 @@
 
 [plugins]
 
-com-android-application = { id = "com.android.application", version = "8.1.0-alpha03" }
+com-android-application = { id = "com.android.application", version = "8.1.0-alpha05" }
 
-com-android-library = { id = "com.android.library", version = "8.1.0-alpha03" }
+com-android-library = { id = "com.android.library", version = "8.1.0-alpha05" }
 
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
