@@ -1,8 +1,3 @@
-plugins {
-    alias(libs.plugins.com.android.library)
-    alias(libs.plugins.org.jetbrains.kotlin.android)
-}
-
 android {
     namespace = "taiwan.no.one.comment"
     compileSdk = 33
