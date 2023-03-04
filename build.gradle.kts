@@ -1,5 +1,6 @@
 plugins.apply("plugin.header")
 plugins.apply("plugin.common")
+// plugins.apply("plugin.detekt")
 plugins.apply("plugin.kotlin")
 
 buildscript {
@@ -15,4 +16,15 @@ plugins {
     alias(libs.plugins.org.jetbrains.kotlin.plugin.serialization)
     alias(libs.plugins.com.google.gms.google.services)
     alias(libs.plugins.com.google.devtools.ksp)
+}
+
+subprojects {
+    beforeEvaluate {
+        if (name in listOf("ext", "test", "feat", "lib")) return@beforeEvaluate
+        plugins.apply("plugin.jacoco")
+    }
+}
+
+allprojects {
+    plugins.apply("plugin.ktlint")
 }

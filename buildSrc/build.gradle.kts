@@ -23,4 +23,5 @@ dependencies {
 
     refVerImplementation("com.android.tools.build:gradle", "gradle")
     refVerImplementation("org.jetbrains.kotlin:kotlin-gradle-plugin", "kotlin")
+    refVerImplementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin", "detekt-gradle-plugin")
 }
