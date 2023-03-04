@@ -1,7 +1,8 @@
 package plugin
 
 import com.android.build.api.dsl.ApplicationExtension
-import com.android.build.api.dsl.DynamicFeatureExtension
+import com.android.build.api.dsl.BuildFeatures
+import com.android.build.api.dsl.CommonExtension
 import com.android.build.api.dsl.LibraryExtension
 import com.android.build.gradle.BaseExtension
 import config.AndroidConfiguration
@@ -9,7 +10,7 @@ import config.AndroidConfiguration
 subprojects {
     afterEvaluate {
         //region Common Setting
-        if (name !in listOf("ext", "features", "libraries")) {
+        if (name !in listOf("ext", "feat", "lib")) {
             // BaseExtension is common parent for application, library and test modules
             extensions.apply {
                 configure<BaseExtension> {
@@ -51,8 +52,10 @@ subprojects {
                 }
                 // For the different type of the project.
                 findByType(ApplicationExtension::class.java)?.applyLintOptions()
-                findByType(DynamicFeatureExtension::class.java)?.applyLintOptions()
                 findByType(LibraryExtension::class.java)?.applyLintOptions()
+                // For Jetpack Compose
+                if (!(name == "app" || displayName.contains(":feat:"))) return@apply
+                (findByType(CommonExtension::class.java) as? CommonExtension<BuildFeatures, *, *, *>)?.applyCompose()
             }
         }
         //endregion
@@ -75,14 +78,6 @@ fun BaseExtension.applyTestOptions() {
     }
 }
 
-fun DynamicFeatureExtension.applyLintOptions() {
-    lint {
-        abortOnError = false
-        ignoreWarnings = true
-        quiet = true
-    }
-}
-
 fun ApplicationExtension.applyLintOptions() {
     lint {
         abortOnError = false
@@ -96,5 +91,15 @@ fun LibraryExtension.applyLintOptions() {
         abortOnError = false
         ignoreWarnings = true
         quiet = true
+    }
+}
+
+fun CommonExtension<BuildFeatures, *, *, *>.applyCompose() {
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.0"
     }
 }

@@ -19,7 +19,7 @@ org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.re
 
 [versions]
 
-gradle = "8.1.0-alpha05"
+gradle = "8.1.0-alpha07"
 
 kotlin = "1.8.0"
 ##  ⬆ = "1.8.10"

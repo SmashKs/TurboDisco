@@ -6,7 +6,6 @@ plugins {
 
 android {
     namespace = "taiwan.no.one.turbodisco"
-    compileSdk = 33
 
     defaultConfig {
         applicationId = "taiwan.no.one.turbodisco"
@@ -18,36 +17,8 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            isDebuggable = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), file("proguard-rules.pro"))
-        }
-    }
-
     packagingOptions {
         resources.excludes += "DebugProbesKt.bin"
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
-        suppressWarnings = false
-        languageVersion = "1.9"
-        freeCompilerArgs = listOf("-Xcontext-receivers")
-    }
-
-    buildFeatures {
-        compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.0"
     }
 }
 

@@ -16,11 +16,11 @@ val tomlDependencies = org.jetbrains.kotlin.konan.properties.loadProperties(
 )
 
 dependencies {
-    fun refVerCompileOnly(artifact: String, refVerNotation: String) {
+    fun refVerImplementation(artifact: String, refVerNotation: String) {
         val version = tomlDependencies[refVerNotation].toString().replace("\"", "")
-        compileOnly("$artifact:$version")
+        implementation("$artifact:$version")
     }
 
-    refVerCompileOnly("com.android.tools.build:gradle", "gradle")
-    refVerCompileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin", "kotlin")
+    refVerImplementation("com.android.tools.build:gradle", "gradle")
+    refVerImplementation("org.jetbrains.kotlin:kotlin-gradle-plugin", "kotlin")
 }
