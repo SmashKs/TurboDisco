@@ -1,6 +1,6 @@
 plugins.apply("plugin.header")
 plugins.apply("plugin.common")
-// plugins.apply("plugin.detekt")
+plugins.apply("plugin.detekt")
 plugins.apply("plugin.kotlin")
 
 buildscript {

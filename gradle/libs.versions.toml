@@ -66,6 +66,8 @@ koin-compose = "3.4.1"
 
 koin-annotation = "1.1.0"
 
+ktlint = "0.48.0"
+
 ktor = "2.2.3"
 
 firebase-bom = "31.2.0"
