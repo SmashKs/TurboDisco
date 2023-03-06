@@ -1,7 +1,9 @@
-<?xml version="1.0" ?>
+<?xml version='1.0' encoding='UTF-8'?>
 <SmellBaseline>
-    <Blacklist></Blacklist>
-    <Whitelist>
+    <CurrentIssues>
         <ID>LargeClass:UnusedPrivateMemberSpec.kt$UnusedPrivateMemberSpec$UnusedPrivateMemberSpec</ID>
-    </Whitelist>
+    </CurrentIssues>
+    <ManuallySuppressedIssues>
+        <ID>WildcardImport:ExampleInstrumentedTest.kt$import org.junit.Assert.*</ID>
+    </ManuallySuppressedIssues>
 </SmellBaseline>
