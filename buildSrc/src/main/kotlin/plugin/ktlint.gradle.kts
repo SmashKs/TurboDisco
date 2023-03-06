@@ -3,7 +3,11 @@ package plugin
 val ktlint by configurations.creating
 
 dependencies {
-    ktlint("com.pinterest:ktlint:0.48.0")
+    val tomlDependencies = org.jetbrains.kotlin.konan.properties.loadProperties(
+        rootDir.resolve("gradle/libs.versions.toml").toString(),
+    )
+    val version = tomlDependencies["ktlint"].toString().replace("\"", "")
+    ktlint("com.pinterest:ktlint:$version")
 }
 
 tasks {
