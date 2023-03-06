@@ -7,7 +7,11 @@ dependencies {
         rootDir.resolve("gradle/libs.versions.toml").toString(),
     )
     val version = tomlDependencies["ktlint"].toString().replace("\"", "")
-    ktlint("com.pinterest:ktlint:$version")
+    ktlint("com.pinterest:ktlint:$version") {
+        attributes {
+            attribute(Bundling.BUNDLING_ATTRIBUTE, objects.named(Bundling.EXTERNAL))
+        }
+    }
 }
 
 tasks {
