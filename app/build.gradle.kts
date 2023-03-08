@@ -23,6 +23,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":lib:core"))
+    implementation(project(":lib:persist"))
+
     implementation(libs.core.ktx)
     //region Jetpack Compose
     implementation(platform(libs.compose.bom))
@@ -46,15 +49,6 @@ dependencies {
     implementation(libs.work.runtime.ktx)
 
     implementation(libs.datastore.preferences)
-    implementation(libs.room.runtime)
-    ksp(libs.room.compiler)
-
-    //region Ktor
-    implementation(libs.ktor.client.core)
-    implementation(libs.ktor.client.okhttp)
-    implementation(libs.ktor.serialization.kotlinx.json)
-    implementation(libs.ktor.client.logging)
-    //endregion
 
     //region di koin
     implementation(libs.koin.androidx.workmanager)
