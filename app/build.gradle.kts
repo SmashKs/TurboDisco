@@ -25,6 +25,7 @@ android {
 dependencies {
     implementation(project(":lib:core"))
     implementation(project(":lib:persist"))
+    implementation(project(":lib:network"))
 
     implementation(libs.core.ktx)
     //region Jetpack Compose
@@ -53,8 +54,6 @@ dependencies {
     //region di koin
     implementation(libs.koin.androidx.workmanager)
     implementation(libs.koin.androidx.compose)
-    implementation(libs.koin.ktor)
-    implementation(libs.koin.logger.slf4j)
     implementation(libs.koin.annotations)
     ksp(libs.koin.ksp.compiler)
     //endregion

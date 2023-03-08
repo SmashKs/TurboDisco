@@ -4,6 +4,7 @@ import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
+import taiwan.no1.network.networkProvider
 
 class TurboDisco : Application() {
     override fun onCreate() {
@@ -13,6 +14,7 @@ class TurboDisco : Application() {
         startKoin {
             androidLogger()
             androidContext(this@TurboDisco)
+            modules(networkProvider)
         }
         //endregion
     }
