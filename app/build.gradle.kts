@@ -24,8 +24,6 @@ android {
 
 dependencies {
     implementation(project(":lib:core"))
-    implementation(project(":lib:persist"))
-    implementation(project(":lib:network"))
 
     implementation(libs.core.ktx)
     //region Jetpack Compose

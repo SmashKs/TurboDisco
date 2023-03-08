@@ -3,14 +3,10 @@ android {
 }
 
 dependencies {
-    implementation(libs.core.ktx)
+    api(project(":lib:persist"))
+    api(project(":lib:network"))
 
-    //region Ktor
-    implementation(libs.ktor.client.core)
-    implementation(libs.ktor.client.okhttp)
-    implementation(libs.ktor.client.serialization)
-    implementation(libs.ktor.client.logging)
-    //endregion
+    implementation(libs.core.ktx)
 
     testImplementation(libs.junit.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
