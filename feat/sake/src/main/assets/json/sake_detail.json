@@ -1,0 +1,106 @@
+{
+    "name" : "Sake",
+    "origin" : "Japan",
+    "alcohol_content" : {
+        "minimum" : "14.5%",
+        "maximum" : "20%",
+        "average" : "15-17%",
+        "legal_limit" : "22%"
+    },
+    "brief_description" : "Sake is a Japanese rice wine made through a process of fermentation.",
+    "description" : "Sake is a Japanese rice wine made through a process of fermentation. It is brewed using rice, water, yeast, and koji mold.",
+    "flavor_profile" : "Sake can have a wide range of flavors and aromas, depending on the type and brewing method. Common flavors include umami, fruitiness, and floral notes. The texture can range from light and crisp to rich and full-bodied.",
+    "history" : "Sake has been produced in Japan for over a thousand years and has played an important role in Japanese culture and traditions.",
+    "production" : "The production of sake involves several steps, including rice polishing, washing, soaking, steaming, and fermentation. The quality of the sake is largely determined by the quality of the rice and water used, as well as the brewing process.",
+    "serving" : {
+        "temperature" : {
+            "range" : "chilled, room temperature, or warmed",
+            "suggested_temperature" : {
+                "Junmai-shu" : {
+                    "chilled" : "8-12°C",
+                    "room_temperature" : "15-20°C",
+                    "warmed" : "45°C"
+                },
+                "Honjozo-shu" : {
+                    "chilled" : "8-12°C",
+                    "room_temperature" : "15-20°C",
+                    "warmed" : "45°C"
+                },
+                "Ginjo-shu" : {
+                    "chilled" : "5-10°C",
+                    "room_temperature" : "10-15°C",
+                    "warmed" : "40°C"
+                },
+                "Daiginjo-shu" : {
+                    "chilled" : "5-10°C",
+                    "room_temperature" : "10-15°C",
+                    "warmed" : "40°C"
+                }
+            }
+        },
+        "glassware" : "Sake is traditionally served in small cups called choko or in a small flask called tokkuri. The shape and material of the vessel can affect the aroma and flavor of the sake.",
+        "food_pairings" : [
+            "Sake is versatile and can be paired with a wide range of foods. Some traditional pairings include sushi, sashimi, grilled meats, stews, and fried dishes. The pairing can depend on the type of sake and its flavor profile."
+        ]
+    },
+    "types" : [
+        {
+            "name" : "Junmai-shu",
+            "description" : "Pure rice sake, made only from rice, water, yeast, and koji mold. No additional alcohol or additives are used.",
+            "flavor_profile" : "Rich, full-bodied, earthy, and savory.",
+            "food_pairings" : [
+                "Grilled meats",
+                "Fried dishes",
+                "Stews"
+            ]
+        },
+        {
+            "name" : "Honjozo-shu",
+            "description" : "Sake with a small amount of distilled alcohol added to the brewing process.",
+            "flavor_profile" : "Light and crisp, with a mild aroma and a clean finish.",
+            "food_pairings" : [
+                "Sashimi",
+                "Steamed seafood",
+                "Lightly seasoned dishes"
+            ]
+        },
+        {
+            "name" : "Ginjo-shu",
+            "description" : "Sake made with highly polished rice and fermented at lower temperatures for a longer period of time.",
+            "flavor_profile" : "Light and fruity, with a delicate aroma and a smooth finish.",
+            "food_pairings" : [
+                "Sushi",
+                "Lightly seasoned fish",
+                "Salads"
+            ]
+        },
+        {
+            "name" : "Daiginjo-shu",
+            "description" : "Sake made with the highest quality rice and fermented at even lower temperatures for an even longer period of time.",
+            "flavor_profile" : "Very light and fragrant, with a subtle and elegant flavor.",
+            "food_pairings" : [
+                "Raw oysters",
+                "Sashimi",
+                "Lightly seasoned dishes"
+            ]
+        }
+    ],
+    "brewing_process" : {
+        "rice_polishing" : {
+            "Junmai-shu" : "70% or less remaining",
+            "Honjozo-shu" : "70% or less remaining",
+            "Ginjo-shu" : "60% or less remaining",
+            "Daiginjo-shu" : "50% or less remaining"
+        },
+        "milling_process" : {
+            "rice_washing" : "Polished rice is washed thoroughly to remove any remaining bran.",
+            "soaking" : "The rice is soaked in water to allow it to absorb moisture.",
+            "steaming" : "The rice is steamed to soften it and make it easier to ferment.",
+            "koji_making" : "Koji mold is added to the steamed rice to create a mold that will convert the rice's starches into sugar.",
+            "moto_making" : "Yeast and water are added to the koji rice to create a starter culture that will be used to ferment the sake.",
+            "fermentation" : "The starter culture is added to the main batch of steamed rice, and the mixture is left to ferment for several days.",
+            "pressing" : "The fermented mixture is pressed to separate the liquid (sake) from the solids (lees).",
+            "aging" : "The sake is aged for a period of time to develop its flavor and aroma."
+        }
+    }
+}

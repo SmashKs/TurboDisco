@@ -47,8 +47,6 @@ dependencies {
     implementation(libs.startup.runtime)
     implementation(libs.work.runtime.ktx)
 
-    implementation(libs.datastore.preferences)
-
     //region di koin
     implementation(libs.koin.androidx.workmanager)
     implementation(libs.koin.androidx.compose)
