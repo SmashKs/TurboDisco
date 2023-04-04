@@ -5,7 +5,7 @@
 com-google-gms-google-services = { id = "com.google.gms.google-services", version = "4.3.15" }
 
 com-google-devtools-ksp = { id = "com.google.devtools.ksp", version = "1.8.10-1.0.9" }
-##                                                               ⬆ = "1.8.20-Beta-1.0.9" }
+##                                                               ⬆ = "1.8.20-1.0.10" }
 
 org-jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 
@@ -13,7 +13,7 @@ org-jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.
 
 detekt-gradle-plugin = "1.22.0"
 
-gradle = "8.1.0-alpha08"
+gradle = "8.1.0-alpha11"
 
 kotlin = "1.8.10"
 ##  ⬆ = "1.8.20-Beta"

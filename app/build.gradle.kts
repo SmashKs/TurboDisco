@@ -2,6 +2,7 @@ plugins {
     id("com.google.devtools.ksp")
     id("kotlin-parcelize")
     id("org.jetbrains.kotlin.plugin.serialization")
+    id("com.jraska.module.graph.assertion")
 }
 
 android {
@@ -58,4 +59,12 @@ dependencies {
 
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
+}
+
+moduleGraphAssert {
+    maxHeight = 2
+    allowed = arrayOf(":.* -> :lib:core", ":lib.* -> :lib.*")
+    restricted = arrayOf("[\\S:]*-api -X> [\\S:]*-api")
+    configurations = setOf("api", "implementation")
+    assertOnAnyBuild = true
 }

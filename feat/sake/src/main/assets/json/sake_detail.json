@@ -1,17 +1,21 @@
 {
     "name" : "Sake",
     "origin" : "Japan",
+    "photo_urls" : [
+        "placeholder1.jpg",
+        "placeholder2.jpg"
+    ],
+    "brief_description" : "Sake is a Japanese rice wine made through a process of fermentation.",
+    "description" : "Sake is a Japanese rice wine made through a process of fermentation. It is brewed using rice, water, yeast, and koji mold.",
+    "flavor_profile" : "Sake can have a wide range of flavors and aromas, depending on the type and brewing method. Common flavors include umami, fruitiness, and floral notes. The texture can range from light and crisp to rich and full-bodied.",
+    "history" : "Sake has been produced in Japan for over a thousand years and has played an important role in Japanese culture and traditions.",
+    "production" : "The production of sake involves several steps, including rice polishing, washing, soaking, steaming, and fermentation. The quality of the sake is largely determined by the quality of the rice and water used, as well as the brewing process.",
     "alcohol_content" : {
         "minimum" : "14.5%",
         "maximum" : "20%",
         "average" : "15-17%",
         "legal_limit" : "22%"
     },
-    "brief_description" : "Sake is a Japanese rice wine made through a process of fermentation.",
-    "description" : "Sake is a Japanese rice wine made through a process of fermentation. It is brewed using rice, water, yeast, and koji mold.",
-    "flavor_profile" : "Sake can have a wide range of flavors and aromas, depending on the type and brewing method. Common flavors include umami, fruitiness, and floral notes. The texture can range from light and crisp to rich and full-bodied.",
-    "history" : "Sake has been produced in Japan for over a thousand years and has played an important role in Japanese culture and traditions.",
-    "production" : "The production of sake involves several steps, including rice polishing, washing, soaking, steaming, and fermentation. The quality of the sake is largely determined by the quality of the rice and water used, as well as the brewing process.",
     "serving" : {
         "temperature" : {
             "range" : "chilled, room temperature, or warmed",

@@ -55,7 +55,7 @@ subprojects {
                 findByType(LibraryExtension::class.java)?.applyLintOptions()
                 // For Jetpack Compose
                 if (!(name == "app" || displayName.contains(":feat:"))) return@apply
-                (findByType(CommonExtension::class.java) as? CommonExtension<BuildFeatures, *, *, *>)?.applyCompose()
+                (findByType(CommonExtension::class.java) as? CommonExtension<BuildFeatures, *, *, *, *>)?.applyCompose()
             }
         }
         //endregion
@@ -94,12 +94,12 @@ fun LibraryExtension.applyLintOptions() {
     }
 }
 
-fun CommonExtension<BuildFeatures, *, *, *>.applyCompose() {
+fun CommonExtension<BuildFeatures, *, *, *, *>.applyCompose() {
     buildFeatures {
         compose = true
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.4.4"
     }
 }
