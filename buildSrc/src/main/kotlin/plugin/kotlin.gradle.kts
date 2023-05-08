@@ -9,6 +9,7 @@ subprojects {
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_17)
             suppressWarnings.set(false)
+//            languageVersion.set(KotlinVersion.KOTLIN_2_0)
             languageVersion.set(KotlinVersion.KOTLIN_1_9)
             freeCompilerArgs.set(
                 listOf(

@@ -4,8 +4,7 @@
 
 com-google-gms-google-services = { id = "com.google.gms.google-services", version = "4.3.15" }
 
-com-google-devtools-ksp = { id = "com.google.devtools.ksp", version = "1.8.10-1.0.9" }
-##                                                               ⬆ = "1.8.20-1.0.10" }
+com-google-devtools-ksp = { id = "com.google.devtools.ksp", version = "1.8.21-1.0.11" }
 
 org-jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 
@@ -13,10 +12,9 @@ org-jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.
 
 detekt-gradle-plugin = "1.22.0"
 
-gradle = "8.1.0-alpha11"
+gradle = "8.2.0-alpha02"
 
-kotlin = "1.8.10"
-##  ⬆ = "1.8.20-Beta"
+kotlin = "1.8.21"
 
 androidx-test-ext-junit = "1.1.5"
 
@@ -26,7 +24,7 @@ androidx-core = "1.10.0-beta01"
 
 junit-junit = "4.13.2"
 
-androidx-compose = "2023.01.00"
+androidx-compose = "2023.05.00"
 
 androidx-lifecycle-viewmodel-compose = "2.6.0-rc01"
 

@@ -6,7 +6,7 @@ pluginManagement {
     }
     plugins {
         id("de.fayard.refreshVersions").version("0.51.0")
-        id("com.android.library") version "8.1.0-alpha11"
+        id("com.android.library") version "8.2.0-alpha02"
         id("org.jetbrains.kotlin.android") version "1.8.0"
         id("org.jetbrains.kotlin.jvm") version "1.8.0"
         id("com.jraska.module.graph.assertion") version "2.3.1"
@@ -22,6 +22,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        // XXX(jieyi): 2023/04/04 This is for the dev jetpack compose repo
+        maven {
+            setUrl("https://androidx.dev/storage/compose-compiler/repository/")
+        }
     }
 }
 
