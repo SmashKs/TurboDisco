@@ -48,6 +48,9 @@ dependencies {
     implementation(libs.startup.runtime)
     implementation(libs.work.runtime.ktx)
 
+    api(platform(libs.firebase.bom))
+    api(libs.firebase.message.ktx)
+
     //region di koin
     implementation(libs.koin.androidx.workmanager)
     implementation(libs.koin.androidx.compose)
@@ -68,3 +71,5 @@ moduleGraphAssert {
     configurations = setOf("api", "implementation")
     assertOnAnyBuild = true
 }
+
+apply { plugin("com.google.gms.google-services") }

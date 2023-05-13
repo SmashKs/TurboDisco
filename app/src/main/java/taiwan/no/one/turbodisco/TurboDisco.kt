@@ -1,6 +1,7 @@
 package taiwan.no.one.turbodisco
 
 import android.app.Application
+import com.google.firebase.FirebaseApp
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -17,5 +18,7 @@ class TurboDisco : Application() {
             modules(networkProvider)
         }
         //endregion
+
+        FirebaseApp.initializeApp(this)
     }
 }

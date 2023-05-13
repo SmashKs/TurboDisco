@@ -1,7 +1,7 @@
 package config
 
 object AndroidConfiguration {
-    const val MIN_SDK = 23
+    const val MIN_SDK = 26
     const val TARGET_SDK = 33
     const val COMPILE_SDK = TARGET_SDK
     const val RELEASE_VERSION = 1
