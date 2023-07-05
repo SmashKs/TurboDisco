@@ -12,7 +12,7 @@ org-jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.
 
 detekt-gradle-plugin = "1.22.0"
 
-gradle = "8.2.0-alpha03"
+gradle = "8.2.0-alpha10"
 
 kotlin = "1.8.21"
 
