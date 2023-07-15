@@ -6,7 +6,7 @@ pluginManagement {
     }
     plugins {
         id("de.fayard.refreshVersions").version("0.51.0")
-        id("com.android.library") version "8.2.0-alpha11"
+        id("com.android.library") version "8.2.0-alpha12"
         id("org.jetbrains.kotlin.android") version "1.8.0"
         id("org.jetbrains.kotlin.jvm") version "1.8.0"
         id("com.jraska.module.graph.assertion") version "2.3.1"
