@@ -100,6 +100,6 @@ fun CommonExtension<BuildFeatures, *, *, *, *>.applyCompose() {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.7"
+        kotlinCompilerExtensionVersion = "1.5.0-dev-k1.9.0-6a60475e07f"
     }
 }
