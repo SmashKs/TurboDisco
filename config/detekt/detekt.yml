@@ -671,7 +671,8 @@ style:
     active: true
   UnusedPrivateMember:
     active: true
-    allowedNames: '(_|ignored|expected)'
+    ignoreAnnotated: [ 'Preview', 'FontLocalPreview' ]
+  #    allowedNames: '(_|ignored|expected)'
   UseArrayLiteralsInAnnotations:
     active: true
   UseCheckNotNull:

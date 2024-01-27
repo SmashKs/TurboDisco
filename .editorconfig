@@ -1,23 +1,25 @@
-root=true
+root = true
 
 [*]
-indent_style=space
-end_of_line=lf
-charset=utf-8
-trim_trailing_whitespace=true
-insert_final_newline=true
+indent_style = space
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
 
 [*.{java,kt,kts,scala,rs,xml,kt.spec,kts.spec}]
-indent_size=4
-max_line_length=120
+indent_size = 4
+max_line_length = 120
 
 [{*.gradle.kts,*.kt,*.kts,*.main.kts}]
-ij_kotlin_allow_trailing_comma=true
-ij_kotlin_allow_trailing_comma_on_call_site=true
-kotlin_imports_layout=ascii
+ktlint_code_style = ktlint_official
+ij_kotlin_allow_trailing_comma = true
+ij_kotlin_allow_trailing_comma_on_call_site = true
+kotlin_imports_layout = ascii
+ktlint_function_naming_ignore_when_annotated_with = Composable
 
 [*.md]
-trim_trailing_whitespace=false
+trim_trailing_whitespace = false
 
 # Starting from ktlint 0.34.2 There is a problem with import "import-ordering" rule - ktlint contradicts
 # default AS import arrangement rules, so we have to disable ktlint it.
@@ -25,4 +27,4 @@ trim_trailing_whitespace=false
 # Since IDE complains about unknown `disabled_rules` key we have to disable it as well:
 
 # noinspection EditorConfigKeyCorrectness
-disabled_rules=no-wildcard-imports,experimental:annotation
+disabled_rules = no-wildcard-imports, experimental:annotation
