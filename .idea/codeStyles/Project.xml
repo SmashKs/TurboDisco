@@ -29,9 +29,6 @@
     </option>
     <option name="RIGHT_MARGIN" value="120" />
     <option name="FORMATTER_TAGS_ENABLED" value="true" />
-    <AndroidXmlCodeStyleSettings>
-      <option name="USE_CUSTOM_SETTINGS" value="true" />
-    </AndroidXmlCodeStyleSettings>
     <HTMLCodeStyleSettings>
       <option name="HTML_ATTRIBUTE_WRAP" value="4" />
       <option name="HTML_KEEP_BLANK_LINES" value="1" />
@@ -58,11 +55,6 @@
       <option name="SPACE_BEFORE_COLON" value="true" />
     </JSON>
     <JavaCodeStyleSettings>
-      <option name="CLASS_COUNT_TO_USE_IMPORT_ON_DEMAND" value="99" />
-      <option name="NAMES_COUNT_TO_USE_IMPORT_ON_DEMAND" value="99" />
-      <option name="PACKAGES_TO_USE_IMPORT_ON_DEMAND">
-        <value />
-      </option>
       <option name="IMPORT_LAYOUT_TABLE">
         <value>
           <package name="android" withSubpackages="true" static="false" />
@@ -87,17 +79,12 @@
       </option>
     </JavaCodeStyleSettings>
     <JetCodeStyleSettings>
-      <option name="PACKAGES_TO_USE_STAR_IMPORTS">
-        <value />
-      </option>
       <option name="PACKAGES_IMPORT_LAYOUT">
         <value>
           <package name="" alias="false" withSubpackages="true" />
           <package name="" alias="true" withSubpackages="true" />
         </value>
       </option>
-      <option name="NAME_COUNT_TO_USE_STAR_IMPORT" value="2147483647" />
-      <option name="NAME_COUNT_TO_USE_STAR_IMPORT_FOR_MEMBERS" value="2147483647" />
       <option name="IMPORT_NESTED_CLASSES" value="true" />
       <option name="WRAP_ELVIS_EXPRESSIONS" value="0" />
       <option name="ALLOW_TRAILING_COMMA" value="true" />
@@ -108,34 +95,8 @@
       <option name="WRAP_ON_TYPING" value="1" />
       <option name="RIGHT_MARGIN" value="100" />
     </MarkdownNavigatorCodeStyleSettings>
-    <Objective-C-extensions>
-      <file>
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Import" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Macro" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Typedef" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Enum" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Constant" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Global" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Struct" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="FunctionPredecl" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Function" />
-      </file>
-      <class>
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Property" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Synthesize" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="InitMethod" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="StaticMethod" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="InstanceMethod" />
-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="DeallocMethod" />
-      </class>
-      <extensions>
-        <pair source="cpp" header="h" />
-        <pair source="c" header="h" />
-      </extensions>
-    </Objective-C-extensions>
     <XML>
       <option name="XML_ATTRIBUTE_WRAP" value="4" />
-      <option name="XML_SPACE_INSIDE_EMPTY_TAG" value="true" />
     </XML>
     <codeStyleSettings language="HTML">
       <option name="RIGHT_MARGIN" value="300" />

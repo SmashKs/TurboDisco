@@ -8,19 +8,23 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.ui.Modifier
 import androidx.core.content.ContextCompat
+import taiwan.no.one.turbodisco.component.BottomNavigationComponent
 
 class MainActivity : ComponentActivity() {
     // Declare the launcher at the top of your Activity/Fragment:
-    private val requestPermissionLauncher = registerForActivityResult(
-        ActivityResultContracts.RequestPermission(),
-    ) { isGranted: Boolean ->
-        if (isGranted) {
-            // FCM SDK (and your app) can post notifications.
-        } else {
-            // TODO: Inform user that that your app will not show notifications.
+    private val requestPermissionLauncher =
+        registerForActivityResult(
+            ActivityResultContracts.RequestPermission(),
+        ) { isGranted: Boolean ->
+            if (isGranted) {
+                // FCM SDK (and your app) can post notifications.
+            } else {
+                // TODO: Inform user that that your app will not show notifications.
+            }
         }
-    }
 
     private fun askNotificationPermission() {
         // This is only necessary for API level >= 33 (TIRAMISU)
@@ -45,6 +49,15 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MaterialTheme {
+                Scaffold(
+                    modifier = Modifier,
+                    topBar = {
+                    },
+                    bottomBar = {
+                        BottomNavigationComponent()
+                    },
+                ) { paddingValues ->
+                }
             }
         }
 
