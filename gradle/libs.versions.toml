@@ -68,6 +68,10 @@ core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx
 
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidx-compose" }
 
+compose-ui = { module = "androidx.compose.ui:ui" }
+
+compose-fundation = { module = "androidx.compose.foundation:foundation" }
+
 activity-compose = { module = "androidx.activity:activity-compose" }
 
 material3 = { module = "androidx.compose.material3:material3" }
@@ -132,7 +136,7 @@ koin-androidx-compose = { group = "io.insert-koin", name = "koin-androidx-compos
 
 koin-annotations = { group = "io.insert-koin", name = "koin-annotations", version.ref = "koin-annotation" }
 
-koin-ksp-compiler = { group = "io.insert-koin", name = "koin-ksp-compiler", version.ref = "koin" }
+koin-ksp-compiler = { group = "io.insert-koin", name = "koin-ksp-compiler", version.ref = "koin-annotation" }
 
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
 

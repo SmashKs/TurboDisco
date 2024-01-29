@@ -50,11 +50,19 @@ subprojects {
                     applyCompileOptions()
                     applyTestOptions()
                 }
+
                 // For the different type of the project.
                 findByType(ApplicationExtension::class.java)?.applyLintOptions()
                 findByType(LibraryExtension::class.java)?.applyLintOptions()
+
                 // For Jetpack Compose
-                if (!(name == "app" || displayName.contains(":feat:"))) return@apply
+                if (
+                    !(name == "app" ||
+                        displayName.contains(":feat:") ||
+                        displayName.contains(":lib:ds"))
+                ) {
+                    return@apply
+                }
                 (findByType(CommonExtension::class.java) as? CommonExtension<BuildFeatures, *, *, *, *>)?.applyCompose()
             }
         }
