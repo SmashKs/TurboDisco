@@ -20,8 +20,9 @@ android {
 }
 
 dependencies {
-    implementation(project(":lib:core"))
-    implementation(project(":lib:ds"))
+    listOf(project(":lib:core"), project(":lib:ds")).forEach(::implementation)
+    listOf(project(":feat:search"), project(":feat:favorite"), project(":feat:photo"), project(":feat:profile"))
+        .forEach(::implementation)
 
     implementation(libs.core.ktx)
     //region Jetpack Compose
@@ -65,7 +66,11 @@ dependencies {
 
 moduleGraphAssert {
     maxHeight = 2
-    allowed = arrayOf(":.* -> :lib.*", ":lib.* -> :lib.*")
+    allowed = arrayOf(
+        ":app -> :feat.*",
+        ":.* -> :lib.*",
+        ":lib.* -> :lib.*",
+    )
     restricted = arrayOf("[\\S:]*-api -X> [\\S:]*-api")
     configurations = setOf("api", "implementation")
     assertOnAnyBuild = true
