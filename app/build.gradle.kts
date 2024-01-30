@@ -21,8 +21,12 @@ android {
 
 dependencies {
     listOf(project(":lib:core"), project(":lib:ds")).forEach(::implementation)
-    listOf(project(":feat:search"), project(":feat:favorite"), project(":feat:photo"), project(":feat:profile"))
-        .forEach(::implementation)
+    listOf(
+        project(":feat:search"),
+        project(":feat:favorite"),
+        project(":feat:photo"),
+        project(":feat:profile"),
+    ).forEach(::implementation)
 
     implementation(libs.core.ktx)
     //region Jetpack Compose

@@ -15,6 +15,8 @@ val tomlDependencies = org.jetbrains.kotlin.konan.properties.loadProperties(
     projectDir.resolve("../gradle/libs.versions.toml").toString(),
 )
 
+val catalog = extensions.getByType<VersionCatalogsExtension>()
+
 dependencies {
     fun refVerImplementation(artifact: String, refVerNotation: String) {
         val version = tomlDependencies[refVerNotation].toString().replace("\"", "")
