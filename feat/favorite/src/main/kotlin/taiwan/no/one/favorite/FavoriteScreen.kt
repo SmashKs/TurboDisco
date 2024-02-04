@@ -1,36 +1,26 @@
 package taiwan.no.one.favorite
 
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FavoriteScreen(
+fun FavoriteRoute(
     modifier: Modifier = Modifier,
 ) {
-    Scaffold(
-        topBar = {
-            TopAppBar(title = { Text("Favorite Screen") })
-        },
-    ) { paddingValues ->
-        LazyColumn(
-            modifier = modifier.padding(paddingValues),
-        ) {
-        }
-    }
+    FavoriteScreen(modifier = modifier)
+}
+
+@Composable
+internal fun FavoriteScreen(
+    modifier: Modifier = Modifier,
+) {
 }
 
 @Preview
 @Composable
-fun PreviewSearchScreen() {
+private fun PreviewSearchScreen() {
     MaterialTheme {
         FavoriteScreen()
     }
