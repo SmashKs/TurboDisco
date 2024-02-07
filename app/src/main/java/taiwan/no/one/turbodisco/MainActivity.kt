@@ -17,6 +17,7 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import taiwan.no.one.favorite.navigation.favoriteScreen
+import taiwan.no.one.photo.navigation.photoScreen
 import taiwan.no.one.profile.navigation.profileScreen
 import taiwan.no.one.search.navigation.searchScreen
 import taiwan.no.one.turbodisco.component.BottomNavigationComponent
@@ -76,6 +77,7 @@ class MainActivity : ComponentActivity() {
                             startDestination = "",
                         ) {
                             searchScreen()
+                            photoScreen()
                             favoriteScreen()
                             profileScreen()
                         }
