@@ -1,5 +1,5 @@
 android {
-    namespace = "taiwan.no.one.user.profile"
+    namespace = "taiwan.no.one.profile"
 }
 
 dependencies {

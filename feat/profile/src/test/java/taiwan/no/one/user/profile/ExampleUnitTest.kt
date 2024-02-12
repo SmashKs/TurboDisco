@@ -1,4 +1,4 @@
-package taiwan.no.one.user.profile
+package taiwan.no.one.profile
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
