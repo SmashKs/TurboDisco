@@ -1,4 +1,4 @@
-package taiwan.no.one.profile
+package taiwan.no.one.profile.component
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable

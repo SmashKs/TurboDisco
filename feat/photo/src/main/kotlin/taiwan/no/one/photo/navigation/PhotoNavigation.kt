@@ -3,7 +3,7 @@ package taiwan.no.one.photo.navigation
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import taiwan.no.one.photo.PhotoScreen
+import taiwan.no.one.photo.component.PhotoScreen
 
 private const val PHOTO_ROUTE = "photo_route"
 

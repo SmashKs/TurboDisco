@@ -1,3 +1,5 @@
+plugins.apply("setting.compose")
+
 android {
     namespace = "taiwan.no.one.search"
 }

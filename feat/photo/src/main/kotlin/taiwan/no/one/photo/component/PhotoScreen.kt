@@ -1,4 +1,4 @@
-package taiwan.no.one.photo
+package taiwan.no.one.photo.component
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable

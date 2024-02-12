@@ -4,9 +4,9 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import taiwan.no.one.search.SearchRoute
+import taiwan.no.one.search.component.SearchRoute
 
-private const val SEARCH_ROUTE = "search_route"
+const val SEARCH_ROUTE = "search_route"
 
 fun NavController.navigateToSearch() = navigate(SEARCH_ROUTE)
 

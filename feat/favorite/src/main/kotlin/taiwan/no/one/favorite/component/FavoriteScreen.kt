@@ -1,4 +1,4 @@
-package taiwan.no.one.favorite
+package taiwan.no.one.favorite.component
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable

@@ -1,4 +1,4 @@
-package taiwan.no.one.search
+package taiwan.no.one.search.component
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
