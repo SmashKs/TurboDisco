@@ -19,8 +19,8 @@ import androidx.navigation.compose.rememberNavController
 import taiwan.no.one.favorite.navigation.favoriteScreen
 import taiwan.no.one.photo.navigation.photoScreen
 import taiwan.no.one.profile.navigation.profileScreen
-import taiwan.no.one.search.navigation.SEARCH_ROUTE
-import taiwan.no.one.search.navigation.searchScreen
+import taiwan.no.one.search.navigation.SEARCH_GRAPH_ROUTE_PATTERN
+import taiwan.no.one.search.navigation.searchGraph
 import taiwan.no.one.turbodisco.component.BottomNavigationComponent
 
 class MainActivity : ComponentActivity() {
@@ -75,9 +75,9 @@ class MainActivity : ComponentActivity() {
                         NavHost(
                             modifier = Modifier,
                             navController = rememberNavController(),
-                            startDestination = SEARCH_ROUTE,
+                            startDestination = SEARCH_GRAPH_ROUTE_PATTERN,
                         ) {
-                            searchScreen()
+                            searchGraph()
                             photoScreen()
                             favoriteScreen()
                             profileScreen()
