@@ -5,30 +5,36 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import taiwan.no.one.turbodisco.entity.bottomNavItems
+import androidx.navigation.NavDestination
+import androidx.navigation.NavDestination.Companion.hierarchy
+import taiwan.no.one.turbodisco.entity.TopLevelNavigationItem
 
 @Composable
-internal fun BottomNavigationComponent(modifier: Modifier = Modifier) {
-    var selectedIcon by remember { mutableStateOf(bottomNavItems.first()) }
+internal fun BottomNavigationComponent(
+    modifier: Modifier = Modifier,
+//    currentDestination: TopLevelNavigationItem?,
+    onNavigateTopLevelScreen: (TopLevelNavigationItem) -> Unit = {},
+) {
+    var selectedItem = remember {
+        TopLevelNavigationItem.EXPLORE
+    }
 
     BottomAppBar(
         modifier = modifier,
     ) {
-        bottomNavItems.forEachIndexed { index, item ->
+        TopLevelNavigationItem.entries.forEachIndexed { index, item ->
             NavigationBarItem(
-                selected = selectedIcon == item,
+                selected = selectedItem == item,
                 onClick = {
-                    selectedIcon = item
+                    selectedItem = item
+                    onNavigateTopLevelScreen(item)
                 },
                 icon = {
                     Icon(
-                        imageVector = if (item == selectedIcon) item.selectedIcon else item.unselectedIcon,
+                        imageVector = if (item == selectedItem) item.selectedIcon else item.unselectedIcon,
                         contentDescription = null,
                     )
                 },
@@ -36,6 +42,11 @@ internal fun BottomNavigationComponent(modifier: Modifier = Modifier) {
         }
     }
 }
+
+private fun NavDestination?.isTopLevelDestinationInHierarchy(destination: TopLevelNavigationItem) =
+    this?.hierarchy?.any {
+        it.route?.contains(destination.name, true) ?: false
+    } ?: false
 
 @Preview
 @Composable

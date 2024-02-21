@@ -14,14 +14,24 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.core.content.ContextCompat
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navOptions
 import taiwan.no.one.favorite.navigation.favoriteScreen
+import taiwan.no.one.favorite.navigation.navigateToFavorite
+import taiwan.no.one.photo.navigation.navigateToPhoto
 import taiwan.no.one.photo.navigation.photoScreen
+import taiwan.no.one.profile.navigation.navigateToProfile
 import taiwan.no.one.profile.navigation.profileScreen
 import taiwan.no.one.search.navigation.SEARCH_GRAPH_ROUTE_PATTERN
+import taiwan.no.one.search.navigation.navigateToSearch
 import taiwan.no.one.search.navigation.searchGraph
 import taiwan.no.one.turbodisco.component.BottomNavigationComponent
+import taiwan.no.one.turbodisco.entity.TopLevelNavigationItem.CAMERA
+import taiwan.no.one.turbodisco.entity.TopLevelNavigationItem.EXPLORE
+import taiwan.no.one.turbodisco.entity.TopLevelNavigationItem.FAVORITE
+import taiwan.no.one.turbodisco.entity.TopLevelNavigationItem.PROFILE
 
 class MainActivity : ComponentActivity() {
     // Declare the launcher at the top of your Activity/Fragment:
@@ -60,11 +70,37 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MaterialTheme {
+                val navController = rememberNavController()
                 Scaffold(
                     modifier = Modifier,
                     topBar = {},
                     bottomBar = {
-                        BottomNavigationComponent()
+                        BottomNavigationComponent(
+                            modifier = Modifier,
+//                            currentDestination = navController.currentBackStackEntryAsState()?.value?.destination,
+                            onNavigateTopLevelScreen = { topLevelItem ->
+                                val topLevelNavOptions = navOptions {
+                                    // Pop up to the start destination of the graph to
+                                    // avoid building up a large stack of destinations
+                                    // on the back stack as users select items
+                                    popUpTo(navController.graph.findStartDestination().id) {
+                                        saveState = true
+                                    }
+                                    // Avoid multiple copies of the same destination when
+                                    // reselecting the same item
+                                    launchSingleTop = true
+                                    // Restore state when reselecting a previously selected item
+                                    restoreState = true
+                                }
+
+                                when (topLevelItem) {
+                                    EXPLORE -> navController.navigateToSearch(topLevelNavOptions)
+                                    CAMERA -> navController.navigateToPhoto(topLevelNavOptions)
+                                    FAVORITE -> navController.navigateToFavorite(topLevelNavOptions)
+                                    PROFILE -> navController.navigateToProfile(topLevelNavOptions)
+                                }
+                            },
+                        )
                     },
                 ) { paddingValues ->
                     Column(
@@ -74,7 +110,7 @@ class MainActivity : ComponentActivity() {
                     ) {
                         NavHost(
                             modifier = Modifier,
-                            navController = rememberNavController(),
+                            navController = navController,
                             startDestination = SEARCH_GRAPH_ROUTE_PATTERN,
                         ) {
                             searchGraph()
