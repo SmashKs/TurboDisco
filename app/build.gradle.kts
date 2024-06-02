@@ -3,6 +3,7 @@ plugins {
     id("kotlin-parcelize")
     id("org.jetbrains.kotlin.plugin.serialization")
     id("com.jraska.module.graph.assertion")
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -70,11 +71,12 @@ dependencies {
 
 moduleGraphAssert {
     maxHeight = 2
-    allowed = arrayOf(
-        ":app -> :feat.*",
-        ":.* -> :lib.*",
-        ":lib.* -> :lib.*",
-    )
+    allowed =
+        arrayOf(
+            ":app -> :feat.*",
+            ":.* -> :lib.*",
+            ":lib.* -> :lib.*",
+        )
     restricted = arrayOf("[\\S:]*-api -X> [\\S:]*-api")
     configurations = setOf("api", "implementation")
     assertOnAnyBuild = true

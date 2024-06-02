@@ -1,3 +1,7 @@
+plugins {
+    alias(libs.plugins.compose.compiler)
+}
+
 android {
     namespace = "taiwan.no.one.profile"
 }

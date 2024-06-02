@@ -1,3 +1,7 @@
+plugins {
+    alias(libs.plugins.compose.compiler)
+}
+
 plugins.apply("setting.compose")
 
 android {

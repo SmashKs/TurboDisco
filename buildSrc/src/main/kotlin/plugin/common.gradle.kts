@@ -55,15 +55,22 @@ subprojects {
                 findByType(ApplicationExtension::class.java)?.applyLintOptions()
                 findByType(LibraryExtension::class.java)?.applyLintOptions()
 
-                // For Jetpack Compose
+                //region Jetpack Compose Setting
                 if (
-                    !(name == "app" ||
-                        displayName.contains(":feat:") ||
-                        displayName.contains(":lib:ds"))
+                    !(
+                        name == "app" ||
+                            displayName.contains(":feat:") ||
+                            displayName.contains(":lib:ds")
+                    )
                 ) {
                     return@apply
                 }
-                (findByType(CommonExtension::class.java) as? CommonExtension<BuildFeatures, *, *, *, *>)?.applyCompose()
+                (
+                    findByType(
+                        CommonExtension::class.java,
+                    ) as? CommonExtension<BuildFeatures, *, *, *, *, *>
+                    )?.applyCompose()
+                //endregion
             }
         }
         //endregion
@@ -102,12 +109,7 @@ fun LibraryExtension.applyLintOptions() {
     }
 }
 
-fun CommonExtension<BuildFeatures, *, *, *, *>.applyCompose() {
+fun CommonExtension<BuildFeatures, *, *, *, *, *>.applyCompose() {
     buildFeatures {
-        compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.9-dev-k2.0.0-Beta3-7c5ec6895a0"
     }
 }

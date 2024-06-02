@@ -16,6 +16,7 @@ plugins {
     alias(libs.plugins.org.jetbrains.kotlin.plugin.serialization)
     alias(libs.plugins.com.google.gms.google.services)
     alias(libs.plugins.com.google.devtools.ksp)
+    alias(libs.plugins.compose.compiler) apply false
 }
 
 subprojects {
