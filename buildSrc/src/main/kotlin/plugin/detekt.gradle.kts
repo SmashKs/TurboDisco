@@ -24,17 +24,18 @@ subprojects {
     }
 
     tasks.withType<Detekt>().configureEach {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+        jvmTarget = JavaVersion.VERSION_21.toString()
         exclude(".*/resources/.*", ".*/build/.*") // but exclude our legacy internal package
     }
 
     detekt {
-        source = objects.fileCollection().from(
-            DetektExtension.DEFAULT_SRC_DIR_JAVA,
-            "src/test/java",
-            DetektExtension.DEFAULT_SRC_DIR_KOTLIN,
-            "src/test/kotlin",
-        )
+        source =
+            objects.fileCollection().from(
+                DetektExtension.DEFAULT_SRC_DIR_JAVA,
+                "src/test/java",
+                DetektExtension.DEFAULT_SRC_DIR_KOTLIN,
+                "src/test/kotlin",
+            )
         buildUponDefaultConfig = true
         baseline = baselineFile
     }

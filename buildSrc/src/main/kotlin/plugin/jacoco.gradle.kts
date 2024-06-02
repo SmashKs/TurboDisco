@@ -17,37 +17,39 @@ tasks.withType<Test> {
     }
 }
 
-private val classDirectoriesTree = fileTree("${project.buildDir}") {
-    include(
-        "**/classes/**/main/**",
-        "**/intermediates/classes/debug/**",
-        "**/intermediates/javac/debug/*/classes/**", // Android Gradle Plugin 3.2.x support.
-        "**/tmp/kotlin-classes/debug/**",
-    )
-    exclude(
-        "**/R.class",
-        "**/R\$*.class",
-        "**/*\$1*",
-        "**/BuildConfig.*",
-        "**/Manifest*.*",
-        "**/*Test*.*",
-        "android/**/*.*",
-        "**/models/**",
-        "**/*\$Lambda$*.*",
-        "**/*\$inlined$*.*",
-    )
-}
+private val classDirectoriesTree =
+    fileTree("${project.layout.buildDirectory}") {
+        include(
+            "**/classes/**/main/**",
+            "**/intermediates/classes/debug/**",
+            "**/intermediates/javac/debug/*/classes/**", // Android Gradle Plugin 3.2.x support.
+            "**/tmp/kotlin-classes/debug/**",
+        )
+        exclude(
+            "**/R.class",
+            "**/R\$*.class",
+            "**/*\$1*",
+            "**/BuildConfig.*",
+            "**/Manifest*.*",
+            "**/*Test*.*",
+            "android/**/*.*",
+            "**/models/**",
+            "**/*\$Lambda$*.*",
+            "**/*\$inlined$*.*",
+        )
+    }
 private val sourceDirectoriesTree = files("$projectDir/src/main/java")
-private val executionDataTree = fileTree("${project.buildDir}") {
-    include(
-        "outputs/code_coverage/**/*.ec",
-        "jacoco/jacocoTestReportDebug.exec",
-        "jacoco/testDebugUnitTest.exec",
-        "jacoco/test.exec",
-    )
-}
-private val xmlReportPath = "$buildDir/reports/code-coverage/jacocoTestReport.xml"
-private val htmlReportPath = "$buildDir/reports/code-coverage/html"
+private val executionDataTree =
+    fileTree("${project.layout.buildDirectory}") {
+        include(
+            "outputs/code_coverage/**/*.ec",
+            "jacoco/jacocoTestReportDebug.exec",
+            "jacoco/testDebugUnitTest.exec",
+            "jacoco/test.exec",
+        )
+    }
+private val xmlReportPath = "${layout.buildDirectory}/reports/code-coverage/jacocoTestReport.xml"
+private val htmlReportPath = "${layout.buildDirectory}/reports/code-coverage/html"
 val jacocoGroup = "verification"
 val taskJacocoAndroidTestReport = "jacocoTestReport"
 val taskJacocoAndroidCoverageVerification = "jacocoCoverageVerification"
@@ -99,12 +101,13 @@ tasks.register<JacocoCoverageVerification>(taskJacocoAndroidCoverageVerification
         }
         rule {
             element = "CLASS"
-            excludes = listOf(
-                "**.FactorFacade.Builder",
-                "**.ServiceFacade.Builder",
-                "**.ChallengeFacade.Builder",
-                "**.Task",
-            )
+            excludes =
+                listOf(
+                    "**.FactorFacade.Builder",
+                    "**.ServiceFacade.Builder",
+                    "**.ChallengeFacade.Builder",
+                    "**.Task",
+                )
             limit {
                 minimum = minimumCoverage
             }

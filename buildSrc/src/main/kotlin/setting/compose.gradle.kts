@@ -9,14 +9,14 @@ tasks.withType<KotlinCompile>().configureEach {
                 listOf(
                     "-P",
                     "plugin:androidx.compose.compiler.plugins.kotlin:reportsDestination=" +
-                        project.buildDir.absolutePath +
+                        project.layout.buildDirectory.get().asFile.absolutePath +
                         "/compose_metrics",
                 )
             freeCompilerArgs =
                 listOf(
                     "-P",
                     "plugin:androidx.compose.compiler.plugins.kotlin:metricsDestination=" +
-                        project.buildDir.absolutePath +
+                        project.layout.buildDirectory.get().asFile.absolutePath +
                         "/compose_metrics",
                 )
         }
