@@ -8,6 +8,8 @@ detekt-gradle-plugin = "1.23.6"
 # It is used by the function fetching [build.gradle.kts (:buildSrc)] and [settings.gradle.kts (TurboDisco)]
 gradle = "8.4.2"
 
+agp = "8.4.2"
+
 kotlin = "2.0.0"
 
 androidx-test-ext-junit = "1.2.0-rc01"
@@ -140,11 +142,15 @@ sentry-android = { group = "io.sentry", name = "sentry-android", version.ref = "
 
 [plugins]
 
+android-application = { id = "com.android.application", version.ref = "agp" }
+
 com-google-gms-google-services = { id = "com.google.gms.google-services", version = "4.4.2" }
 
 com-google-devtools-ksp = { id = "com.google.devtools.ksp", version = "2.0.0-1.0.22" }
 
-org-jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
+jetbrains-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 

@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.org.jetbrains.kotlin.plugin.serialization)
+    alias(libs.plugins.jetbrains.kotlin.serialization)
     alias(libs.plugins.com.google.devtools.ksp)
 //    alias(libs.plugins.kotlin.parcelize)
     id("com.jraska.module.graph.assertion")
