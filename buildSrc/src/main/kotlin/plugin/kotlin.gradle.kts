@@ -12,6 +12,7 @@ subprojects {
             freeCompilerArgs.set(
                 listOf(
                     "-Xcontext-receivers",
+                    "-XXLanguage:+ExplicitBackingFields",
                 ),
             )
         }

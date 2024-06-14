@@ -1,19 +1,24 @@
 pluginManagement {
     repositories {
-        google()
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
         mavenCentral()
         gradlePluginPortal()
     }
     plugins {
-        fun getVersion(libName: String): String {
-            return File("$rootDir/gradle/libs.versions.toml").readLines()
-                .first { it.contains("$libName =") }
-                .split("\"")[1]
-        }
+        fun getVersion(libName: String): String = File("$rootDir/gradle/libs.versions.toml")
+            .readLines()
+            .first { it.contains("$libName =") }
+            .split("\"")[1]
 
         id("com.android.library") version getVersion("gradle")
         id("org.jetbrains.kotlin.android") version getVersion("kotlin")
-        id("de.fayard.refreshVersions") version "0.60.3"
+        id("de.fayard.refreshVersions") version "0.60.5"
         id("com.jraska.module.graph.assertion") version "2.3.1"
     }
 }

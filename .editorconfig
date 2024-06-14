@@ -16,8 +16,11 @@ ktlint_code_style = ktlint_official
 ij_kotlin_allow_trailing_comma = true
 ij_kotlin_allow_trailing_comma_on_call_site = true
 ktlint_function_naming_ignore_when_annotated_with = Composable
+ktlint_standard_multiline-expression-wrapping = disabled
+ktlint_standard_function-signature = disabled
 kotlin_imports_layout = ascii
 disabled_rules = import-ordering
+
 
 [*.md]
 trim_trailing_whitespace = false

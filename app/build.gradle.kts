@@ -1,9 +1,9 @@
 plugins {
-    id("com.google.devtools.ksp")
-    id("kotlin-parcelize")
-    id("org.jetbrains.kotlin.plugin.serialization")
-    id("com.jraska.module.graph.assertion")
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.org.jetbrains.kotlin.plugin.serialization)
+    alias(libs.plugins.com.google.devtools.ksp)
+//    alias(libs.plugins.kotlin.parcelize)
+    id("com.jraska.module.graph.assertion")
 }
 
 android {

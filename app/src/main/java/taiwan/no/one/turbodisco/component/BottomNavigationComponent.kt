@@ -45,8 +45,8 @@ internal fun BottomNavigationComponent(
 
 private fun NavDestination?.isTopLevelDestinationInHierarchy(destination: TopLevelNavigationItem) =
     this?.hierarchy?.any {
-        it.route?.contains(destination.name, true) ?: false
-    } ?: false
+        it.route?.contains(destination.name, true) == true
+    } == true
 
 @Preview
 @Composable
