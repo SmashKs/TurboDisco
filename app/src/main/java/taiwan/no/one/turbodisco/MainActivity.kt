@@ -12,21 +12,23 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
-import taiwan.no.one.favorite.navigation.favoriteScreen
 import taiwan.no.one.favorite.navigation.navigateToFavorite
+import taiwan.no.one.photo.navigation.PhotoGraph
+import taiwan.no.one.photo.navigation.PhotoNavHost
 import taiwan.no.one.photo.navigation.navigateToPhoto
-import taiwan.no.one.photo.navigation.photoScreen
 import taiwan.no.one.profile.navigation.navigateToProfile
-import taiwan.no.one.profile.navigation.profileScreen
-import taiwan.no.one.search.navigation.SEARCH_GRAPH_ROUTE_PATTERN
+import taiwan.no.one.search.navigation.SearchGraph
+import taiwan.no.one.search.navigation.SearchGraphNavHost
 import taiwan.no.one.search.navigation.navigateToSearch
-import taiwan.no.one.search.navigation.searchGraph
 import taiwan.no.one.turbodisco.component.BottomNavigationComponent
 import taiwan.no.one.turbodisco.entity.TopLevelNavigationItem.CAMERA
 import taiwan.no.one.turbodisco.entity.TopLevelNavigationItem.EXPLORE
@@ -70,7 +72,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MaterialTheme {
-                val navController = rememberNavController()
+                val rootNavController = rememberNavController()
+                val navBackStackEntry by rootNavController.currentBackStackEntryAsState()
                 Scaffold(
                     modifier = Modifier,
                     topBar = {},
@@ -83,7 +86,7 @@ class MainActivity : ComponentActivity() {
                                     // Pop up to the start destination of the graph to
                                     // avoid building up a large stack of destinations
                                     // on the back stack as users select items
-                                    popUpTo(navController.graph.findStartDestination().id) {
+                                    popUpTo(rootNavController.graph.findStartDestination().id) {
                                         saveState = true
                                     }
                                     // Avoid multiple copies of the same destination when
@@ -94,10 +97,10 @@ class MainActivity : ComponentActivity() {
                                 }
 
                                 when (topLevelItem) {
-                                    EXPLORE -> navController.navigateToSearch(topLevelNavOptions)
-                                    CAMERA -> navController.navigateToPhoto(topLevelNavOptions)
-                                    FAVORITE -> navController.navigateToFavorite(topLevelNavOptions)
-                                    PROFILE -> navController.navigateToProfile(topLevelNavOptions)
+                                    EXPLORE -> rootNavController.navigateToSearch(topLevelNavOptions)
+                                    CAMERA -> rootNavController.navigateToPhoto(topLevelNavOptions)
+                                    FAVORITE -> rootNavController.navigateToFavorite(topLevelNavOptions)
+                                    PROFILE -> rootNavController.navigateToProfile(topLevelNavOptions)
                                 }
                             },
                         )
@@ -110,13 +113,13 @@ class MainActivity : ComponentActivity() {
                     ) {
                         NavHost(
                             modifier = Modifier,
-                            navController = navController,
-                            startDestination = SEARCH_GRAPH_ROUTE_PATTERN,
+                            navController = rootNavController,
+                            startDestination = SearchGraph,
                         ) {
-                            searchGraph()
-                            photoScreen()
-                            favoriteScreen()
-                            profileScreen()
+                            composable<SearchGraph> { SearchGraphNavHost() }
+                            composable<PhotoGraph> { PhotoNavHost() }
+//                            favoriteScreen()
+//                            profileScreen()
                         }
                     }
                 }

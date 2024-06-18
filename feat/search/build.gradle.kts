@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.jetbrains.kotlin.serialization)
 }
 
 plugins.apply("setting.compose")
@@ -24,6 +25,8 @@ dependencies {
 
     debugImplementation(libs.debug.ui.tooling)
     //endregion
+
+    implementation(libs.kotlinx.serialization.json)
 
     testImplementation(libs.junit.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)

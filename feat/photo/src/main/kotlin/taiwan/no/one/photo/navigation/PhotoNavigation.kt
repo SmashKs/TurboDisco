@@ -1,17 +1,31 @@
 package taiwan.no.one.photo.navigation
 
+import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
-import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
+import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import kotlinx.serialization.Serializable
 import taiwan.no.one.photo.component.PhotoRoute
 
-private const val PHOTO_ROUTE = "photo_route"
+@Serializable
+data object PhotoGraph
 
-fun NavController.navigateToPhoto(navOptions: NavOptions) = navigate(PHOTO_ROUTE, navOptions)
+@Serializable
+private data object PhotoHome
 
-fun NavGraphBuilder.photoScreen() {
-    composable(route = PHOTO_ROUTE) {
-        PhotoRoute()
+fun NavController.navigateToPhoto(navOptions: NavOptions) = navigate(PhotoGraph, navOptions)
+
+@Composable
+fun PhotoNavHost() {
+    val navController = rememberNavController()
+    NavHost(
+        navController = navController,
+        startDestination = PhotoHome,
+    ) {
+        composable<PhotoHome> {
+            PhotoRoute()
+        }
     }
 }

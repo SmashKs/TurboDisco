@@ -20,6 +20,5 @@
       </list>
     </option>
     <option name="redirectChannels" value="true" />
-    <option name="treatAsErrors" value="true" />
   </component>
 </project>
