@@ -2,7 +2,6 @@ plugins {
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.jetbrains.kotlin.serialization)
     alias(libs.plugins.com.google.devtools.ksp)
-//    alias(libs.plugins.kotlin.parcelize)
     id("com.jraska.module.graph.assertion")
 }
 
@@ -15,7 +14,7 @@ android {
         versionName = "1.0"
     }
 
-    packagingOptions {
+    packaging {
         resources.excludes += "DebugProbesKt.bin"
     }
 }

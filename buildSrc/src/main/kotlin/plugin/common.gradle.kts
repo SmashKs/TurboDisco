@@ -35,7 +35,6 @@ subprojects {
                         }
                         getByName("debug") {
                             splits.abi.isEnable = false
-                            splits.density.isEnable = false
                             aaptOptions.cruncherEnabled = false
                             // XXX(jieyi): Don't know the reason why if [isTestCoverageEnabled] removed, the jacoco
                             //  report is generated.

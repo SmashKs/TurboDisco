@@ -1,5 +1,6 @@
 pluginManagement {
     repositories {
+        gradlePluginPortal()
         google {
             content {
                 includeGroupByRegex("com\\.android.*")
@@ -8,7 +9,6 @@ pluginManagement {
             }
         }
         mavenCentral()
-        gradlePluginPortal()
     }
     plugins {
         fun getVersion(libName: String): String = File("$rootDir/gradle/libs.versions.toml")
@@ -16,8 +16,9 @@ pluginManagement {
             .first { it.contains("$libName =") }
             .split("\"")[1]
 
-        id("com.android.library") version getVersion("gradle")
-        id("org.jetbrains.kotlin.android") version getVersion("kotlin")
+        id("com.android.application") version getVersion("gradle") apply false
+        id("com.android.library") version getVersion("gradle") apply false
+        id("org.jetbrains.kotlin.android") version getVersion("kotlin") apply false
         id("de.fayard.refreshVersions") version "0.60.5"
         id("com.jraska.module.graph.assertion") version "2.3.1"
     }

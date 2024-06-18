@@ -29,13 +29,14 @@ subprojects {
     }
 
     detekt {
-        source =
+        source.from(
             objects.fileCollection().from(
                 DetektExtension.DEFAULT_SRC_DIR_JAVA,
                 "src/test/java",
                 DetektExtension.DEFAULT_SRC_DIR_KOTLIN,
                 "src/test/kotlin",
-            )
+            ),
+        )
         buildUponDefaultConfig = true
         baseline = baselineFile
     }

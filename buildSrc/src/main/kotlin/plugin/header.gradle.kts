@@ -16,17 +16,22 @@ subprojects {
     beforeEvaluate {
         apply {
             project.toString().apply project@{
-                if (split(":").size == 2 && !contains("app")) return@project
+                val moduleStrings = split(":")
+                if (moduleStrings.size == 2 && !contains("app")) return@project
                 if (contains(":lib:ext")) {
                     plugin("java-library")
                     plugin("kotlin")
                 } else {
                     if (contains(":app")) {
                         plugin("com.android.application")
+                        plugin("kotlin-parcelize")
                     } else {
                         plugin("com.android.library")
                     }
                     plugin("kotlin-android")
+                    if ("feat" in moduleStrings) {
+                        plugin("kotlin-parcelize")
+                    }
                 }
 //                in modules -> {
 //                    // special plugins
