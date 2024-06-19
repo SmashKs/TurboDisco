@@ -1,18 +1,32 @@
 package taiwan.no.one.favorite.navigation
 
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
-import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
+import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import kotlinx.serialization.Serializable
 import taiwan.no.one.favorite.component.FavoriteRoute
 
-private const val FAVORITE_ROUTE = "favorite_route"
+@Serializable
+data object FavoriteGraph
 
-fun NavController.navigateToFavorite(navOptions: NavOptions) = navigate(FAVORITE_ROUTE, navOptions)
+@Serializable
+private data object FavoriteRoute
 
-fun NavGraphBuilder.favoriteScreen() {
-    composable(route = FAVORITE_ROUTE) {
-        FavoriteRoute(modifier = Modifier)
+fun NavController.navigateToFavorite(navOptions: NavOptions) = navigate(FavoriteGraph, navOptions)
+
+@Composable
+fun FavoriteNavHost() {
+    val navController = rememberNavController()
+    NavHost(
+        navController = navController,
+        startDestination = FavoriteRoute,
+    ) {
+        composable<FavoriteRoute> {
+            FavoriteRoute(modifier = Modifier)
+        }
     }
 }

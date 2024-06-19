@@ -21,10 +21,14 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
+import taiwan.no.one.favorite.navigation.FavoriteGraph
+import taiwan.no.one.favorite.navigation.FavoriteNavHost
 import taiwan.no.one.favorite.navigation.navigateToFavorite
 import taiwan.no.one.photo.navigation.PhotoGraph
 import taiwan.no.one.photo.navigation.PhotoNavHost
 import taiwan.no.one.photo.navigation.navigateToPhoto
+import taiwan.no.one.profile.navigation.ProfileGraph
+import taiwan.no.one.profile.navigation.ProfileNavHost
 import taiwan.no.one.profile.navigation.navigateToProfile
 import taiwan.no.one.search.navigation.SearchGraph
 import taiwan.no.one.search.navigation.SearchGraphNavHost
@@ -118,8 +122,8 @@ class MainActivity : ComponentActivity() {
                         ) {
                             composable<SearchGraph> { SearchGraphNavHost() }
                             composable<PhotoGraph> { PhotoNavHost() }
-//                            favoriteScreen()
-//                            profileScreen()
+                            composable<FavoriteGraph> { FavoriteNavHost() }
+                            composable<ProfileGraph> { ProfileNavHost() }
                         }
                     }
                 }

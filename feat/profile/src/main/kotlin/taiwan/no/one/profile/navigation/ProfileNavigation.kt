@@ -1,17 +1,31 @@
 package taiwan.no.one.profile.navigation
 
+import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
-import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
+import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import kotlinx.serialization.Serializable
 import taiwan.no.one.profile.component.ProfileRoute
 
-private const val PROFILE_ROUTE = "profile_route"
+@Serializable
+data object ProfileGraph
 
-fun NavController.navigateToProfile(navOptions: NavOptions) = navigate(PROFILE_ROUTE, navOptions)
+@Serializable
+private data object ProfileRoute
 
-fun NavGraphBuilder.profileScreen() {
-    composable(route = PROFILE_ROUTE) {
-        ProfileRoute()
+fun NavController.navigateToProfile(navOptions: NavOptions) = navigate(ProfileGraph, navOptions)
+
+@Composable
+fun ProfileNavHost() {
+    val navController = rememberNavController()
+    NavHost(
+        navController = navController,
+        startDestination = ProfileRoute,
+    ) {
+        composable<ProfileRoute> {
+            ProfileRoute()
+        }
     }
 }
